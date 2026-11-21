@@ -33,8 +33,8 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "inline-flex h-7 shrink-0 items-center gap-[1ch] whitespace-nowrap px-[1.5ch] text-muted-foreground outline-none [counter-increment:tab] hover:text-foreground focus-visible:outline-offset-[-2px] disabled:pointer-events-none disabled:opacity-40 [&_svg]:size-3.5",
-        "group-data-[numbered]/tabs:before:text-muted-foreground group-data-[numbered]/tabs:before:content-['['_counter(tab)_']']",
+        "inline-flex h-7 shrink-0 items-center gap-[1ch] whitespace-nowrap px-[1.5ch] text-muted-foreground outline-none [counter-increment:tab] hover:text-foreground focus-visible:-outline-offset-2 disabled:pointer-events-none disabled:opacity-40 [&_svg]:size-3.5",
+        "group-data-numbered/tabs:before:text-muted-foreground group-data-numbered/tabs:before:content-['['_counter(tab)_']']",
         "group-data-[variant=line]/tabs:border group-data-[variant=line]/tabs:border-transparent group-data-[variant=line]/tabs:data-[state=active]:border-border-strong group-data-[variant=line]/tabs:data-[state=active]:border-b-background group-data-[variant=line]/tabs:data-[state=active]:bg-background group-data-[variant=line]/tabs:data-[state=active]:text-accent-ink",
         "group-data-[variant=inverted]/tabs:h-6 group-data-[variant=inverted]/tabs:data-[state=active]:bg-accent group-data-[variant=inverted]/tabs:data-[state=active]:text-accent-foreground group-data-[variant=inverted]/tabs:data-[state=active]:before:text-accent-foreground",
         className,

@@ -10,7 +10,7 @@ function NavigationMenu({ className, children, ...props }: React.ComponentProps<
       <div className="absolute top-full left-0 z-50 flex justify-center">
         <NavigationMenuPrimitive.Viewport
           data-slot="navigation-menu-viewport"
-          className="relative mt-1 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden border border-border-strong bg-surface text-foreground shadow-tui md:w-[var(--radix-navigation-menu-viewport-width)]"
+          className="relative mt-1 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden border border-border-strong bg-surface text-foreground shadow-tui md:w-(--radix-navigation-menu-viewport-width)"
         />
       </div>
     </NavigationMenuPrimitive.Root>

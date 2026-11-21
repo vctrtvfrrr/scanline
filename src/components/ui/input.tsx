@@ -11,7 +11,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
       data-slot="input"
       className={cn(
         inputBase,
-        "h-7 caret-[var(--cursor)] file:mr-[1ch] file:h-full file:border-0 file:border-r file:border-border-strong file:bg-surface-2 file:px-[1ch] file:font-mono file:text-foreground file:hover:bg-accent file:hover:text-accent-foreground",
+        "h-7 caret-(--cursor) file:mr-[1ch] file:h-full file:border-0 file:border-r file:border-border-strong file:bg-surface-2 file:px-[1ch] file:font-mono file:text-foreground file:hover:bg-accent file:hover:text-accent-foreground",
         type === "file" && "pl-0 text-muted-foreground",
         className,
       )}
@@ -35,7 +35,7 @@ function PromptInput({ className, prompt = ">", ...props }: PromptInputProps) {
         {prompt}
       </span>
       <input
-        className="h-full w-full min-w-0 bg-transparent caret-[var(--cursor)] outline-none placeholder:text-muted-foreground/70 focus-visible:outline-none"
+        className="h-full w-full min-w-0 bg-transparent caret-(--cursor) outline-none placeholder:text-muted-foreground/70 focus-visible:outline-none"
         {...props}
       />
     </div>
@@ -46,7 +46,7 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea
       data-slot="textarea"
-      className={cn(inputBase, "field-sizing-content min-h-[5lh] py-1 caret-[var(--cursor)]", className)}
+      className={cn(inputBase, "field-sizing-content min-h-[5lh] py-1 caret-(--cursor)", className)}
       {...props}
     />
   );

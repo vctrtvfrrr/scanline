@@ -10,7 +10,7 @@ function ButtonGroup({ className, orientation = "horizontal", ...props }: Button
       data-slot="button-group"
       data-orientation={orientation}
       className={cn(
-        "inline-flex w-fit items-stretch shadow-tui-sm [&>*]:shadow-none [&>*]:active:translate-0 [&>*:focus-visible]:relative [&>*:focus-visible]:z-10",
+        "inline-flex w-fit items-stretch shadow-tui-sm *:shadow-none *:active:translate-0 [&>*:focus-visible]:relative [&>*:focus-visible]:z-10",
         orientation === "horizontal" ? "[&>*:not(:first-child)]:-ml-px" : "flex-col [&>*:not(:first-child)]:-mt-px",
         className,
       )}

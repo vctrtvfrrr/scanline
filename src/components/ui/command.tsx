@@ -22,7 +22,7 @@ function CommandDialog({ title = "Command palette", description = "Search for a 
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent label={label} className={cn("top-[20%] translate-y-0 overflow-visible p-0 pt-1", className)} showCloseButton={false}>
-        <Command className="[&_[cmdk-group-heading]]:px-[1ch] [&_[cmdk-item]]:h-7">{children}</Command>
+        <Command className="**:[[cmdk-group-heading]]:px-[1ch] **:[[cmdk-item]]:h-7">{children}</Command>
       </DialogContent>
     </Dialog>
   );
@@ -36,7 +36,7 @@ function CommandInput({ className, ...props }: React.ComponentProps<typeof Comma
       </span>
       <CommandPrimitive.Input
         data-slot="command-input"
-        className={cn("flex h-full w-full bg-transparent caret-[var(--cursor)] outline-none placeholder:text-muted-foreground/70 focus-visible:outline-none disabled:opacity-40", className)}
+        className={cn("flex h-full w-full bg-transparent caret-(--cursor) outline-none placeholder:text-muted-foreground/70 focus-visible:outline-none disabled:opacity-40", className)}
         {...props}
       />
     </div>
@@ -44,7 +44,7 @@ function CommandInput({ className, ...props }: React.ComponentProps<typeof Comma
 }
 
 function CommandList({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.List>) {
-  return <CommandPrimitive.List data-slot="command-list" className={cn("max-h-[300px] scroll-py-1 overflow-y-auto overflow-x-hidden p-px", className)} {...props} />;
+  return <CommandPrimitive.List data-slot="command-list" className={cn("max-h-75 scroll-py-1 overflow-y-auto overflow-x-hidden p-px", className)} {...props} />;
 }
 
 function CommandEmpty({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.Empty>) {
@@ -56,7 +56,7 @@ function CommandGroup({ className, ...props }: React.ComponentProps<typeof Comma
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        "overflow-hidden py-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:h-6 [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:px-[1ch] [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:gap-[1ch] [&_[cmdk-group-heading]]:before:content-['──'] [&_[cmdk-group-heading]]:before:text-border-strong",
+        "overflow-hidden py-1 **:[[cmdk-group-heading]]:flex **:[[cmdk-group-heading]]:h-6 **:[[cmdk-group-heading]]:items-center **:[[cmdk-group-heading]]:px-[1ch] **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:uppercase **:[[cmdk-group-heading]]:tracking-wider **:[[cmdk-group-heading]]:text-muted-foreground **:[[cmdk-group-heading]]:gap-[1ch] **:[[cmdk-group-heading]]:before:content-['──'] **:[[cmdk-group-heading]]:before:text-border-strong",
         className,
       )}
       {...props}

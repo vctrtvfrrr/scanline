@@ -21,7 +21,7 @@ function SelectTrigger({ className, children, ...props }: React.ComponentProps<t
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        "flex h-7 w-full items-center justify-between gap-[1ch] whitespace-nowrap border border-border-strong bg-background px-[1ch] outline-none focus-visible:border-accent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-40 aria-invalid:border-red data-[placeholder]:text-muted-foreground/70 data-[state=open]:border-accent [&>span]:truncate",
+        "flex h-7 w-full items-center justify-between gap-[1ch] whitespace-nowrap border border-border-strong bg-background px-[1ch] outline-none focus-visible:border-accent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-40 aria-invalid:border-red data-placeholder:text-muted-foreground/70 data-[state=open]:border-accent [&>span]:truncate",
         className,
       )}
       {...props}
@@ -44,8 +44,8 @@ function SelectContent({ className, children, position = "popper", ...props }: R
         position={position}
         className={cn(
           menuContent,
-          "relative max-h-[var(--radix-select-content-available-height)]",
-          position === "popper" && "w-full min-w-[var(--radix-select-trigger-width)] data-[side=bottom]:translate-y-0.5 data-[side=top]:-translate-y-0.5",
+          "relative max-h-(--radix-select-content-available-height)",
+          position === "popper" && "w-full min-w-(--radix-select-trigger-width) data-[side=bottom]:translate-y-0.5 data-[side=top]:-translate-y-0.5",
           className,
         )}
         {...props}

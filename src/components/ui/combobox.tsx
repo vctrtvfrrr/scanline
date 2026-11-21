@@ -49,7 +49,7 @@ function Combobox({
           </span>
         </button>
       </PopoverTrigger>
-      <PopoverContent align="start" sideOffset={2} className="w-[var(--radix-popover-trigger-width)] min-w-56 p-0 py-0 shadow-tui">
+      <PopoverContent align="start" sideOffset={2} className="w-(--radix-popover-trigger-width) min-w-56 p-0 py-0 shadow-tui">
         <Command>
           <CommandInput placeholder={searchPlaceholder} />
           <CommandList>

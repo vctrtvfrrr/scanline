@@ -142,7 +142,7 @@ function FileTree({ data, rootLabel = ".", defaultExpanded = [], selected: selec
               className={cn(
                 "flex h-[1.35em] cursor-pointer items-center whitespace-pre leading-[1.35] px-[1ch] hover:bg-surface-2 [&_svg]:size-3.5 [&_svg]:shrink-0",
                 "aria-selected:text-accent-ink",
-                "group-focus-visible/tree:data-[focused]:bg-accent group-focus-visible/tree:data-[focused]:text-accent-foreground group-focus-visible/tree:data-[focused]:[&_*]:text-accent-foreground",
+                "group-focus-visible/tree:data-focused:bg-accent group-focus-visible/tree:data-focused:text-accent-foreground group-focus-visible/tree:data-focused:**:text-accent-foreground",
               )}
             >
               <span aria-hidden className="text-border-strong">

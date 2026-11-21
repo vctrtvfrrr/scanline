@@ -123,8 +123,8 @@ function Sidebar({ side = "left", collapsible = "offcanvas", label, className, c
       data-side={side}
       className={cn(
         panel,
-        "w-[var(--sidebar-width)] transition-[width] duration-150 ease-out",
-        "data-[collapsible=icon]:w-[var(--sidebar-width-icon)] data-[collapsible=offcanvas]:w-0 data-[collapsible=offcanvas]:overflow-hidden data-[collapsible=offcanvas]:border-0",
+        "w-(--sidebar-width) transition-[width] duration-150 ease-out",
+        "data-[collapsible=icon]:w-(--sidebar-width-icon) data-[collapsible=offcanvas]:w-0 data-[collapsible=offcanvas]:overflow-hidden data-[collapsible=offcanvas]:border-0",
         className,
       )}
       {...props}

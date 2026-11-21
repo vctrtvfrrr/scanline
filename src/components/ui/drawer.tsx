@@ -36,7 +36,7 @@ function DrawerContent({ className, children, label, ...props }: DrawerContentPr
         )}
         {...props}
       >
-        <div aria-hidden className="mx-auto hidden select-none pt-1 text-xs leading-none tracking-[-0.1em] text-muted-foreground group-data-[vaul-drawer-direction=bottom]/drawer:block">
+        <div aria-hidden className="mx-auto hidden select-none pt-1 text-xs leading-none -tracking-widest text-muted-foreground group-data-[vaul-drawer-direction=bottom]/drawer:block">
           ════════
         </div>
         {label && <span className="border-label text-accent-ink group-data-[vaul-drawer-direction=bottom]/drawer:top-[calc(-0.5lh-1.5px)]">{label}</span>}
