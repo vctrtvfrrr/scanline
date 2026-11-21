@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "@fontsource-variable/jetbrains-mono/wght.css";
+@import "@fontsource-variable/jetbrains-mono/wght-italic.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Ayu Light */
+:root {
+  color-scheme: light;
+  --background: #f8f9fa;
+  --foreground: #5c6166;
+  --surface: #fcfcfc;
+  --surface-2: #eef0f2;
+  --muted-foreground: #787e86;
+  --border: #d5d9de;
+  --border-strong: #aab1b9;
+  --accent: #ffaa33;
+  --accent-foreground: #1a1f26;
+  --cursor: #ffaa33;
+  --shadow-color: #5c616633;
+  --overlay: #f8f9fab3;
+
+  --black: #000000;
+  --red: #ea6c6d;
+  --green: #6cbf43;
+  --yellow: #eca944;
+  --blue: #3199e1;
+  --magenta: #9e75c7;
+  --cyan: #46ba94;
+  --white: #c7c7c7;
+
+  /* Light backgrounds need darker text variants to stay legible. */
+  --ink-mix: 68%;
+  --accent-ink: color-mix(in oklab, var(--accent) var(--ink-mix), #000);
+  --red-ink: color-mix(in oklab, var(--red) 80%, #000);
+  --green-ink: color-mix(in oklab, var(--green) var(--ink-mix), #000);
+  --yellow-ink: color-mix(in oklab, var(--yellow) var(--ink-mix), #000);
+  --blue-ink: color-mix(in oklab, var(--blue) 80%, #000);
+  --magenta-ink: color-mix(in oklab, var(--magenta) 85%, #000);
+  --cyan-ink: color-mix(in oklab, var(--cyan) var(--ink-mix), #000);
+}
+
+/* Ayu Dark */
+.dark {
+  color-scheme: dark;
+  --background: #0b0e14;
+  --foreground: #bfbdb6;
+  --surface: #0f131a;
+  --surface-2: #161b24;
+  --muted-foreground: #6c7480;
+  --border: #252b35;
+  --border-strong: #3b4350;
+  --accent: #e6b450;
+  --accent-foreground: #0b0e14;
+  --cursor: #e6b450;
+  --shadow-color: #00000099;
+  --overlay: #0b0e14b3;
+
+  --black: #1e232b;
+  --red: #ea6c73;
+  --green: #7fd962;
+  --yellow: #f9af4f;
+  --blue: #53bdfa;
+  --magenta: #cda1fa;
+  --cyan: #90e1c6;
+  --white: #c7c7c7;
+
+  --accent-ink: var(--accent);
+  --red-ink: var(--red);
+  --green-ink: var(--green);
+  --yellow-ink: var(--yellow);
+  --blue-ink: var(--blue);
+  --magenta-ink: var(--magenta);
+  --cyan-ink: var(--cyan);
+}
+
+@theme {
+  --color-*: initial;
+  --radius-*: initial;
+
+  --text-2xs: 0.65rem;
+  --text-2xs--line-height: 1.5;
+  --text-xs: 0.7rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.75rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.8rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 0.9rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.2rem;
+  --text-2xl--line-height: 1.35;
+  --text-3xl: 1.5rem;
+  --text-3xl--line-height: 1.25;
+  --text-4xl: 1.9rem;
+  --text-4xl--line-height: 1.2;
+
+  --animate-blink: blink 1.06s steps(1, end) infinite;
+  --animate-shimmer: shimmer 1.4s steps(6, end) infinite;
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 6ch 0;
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-ink: var(--accent-ink);
+  --color-overlay: var(--overlay);
+
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-red: var(--red);
+  --color-green: var(--green);
+  --color-yellow: var(--yellow);
+  --color-blue: var(--blue);
+  --color-magenta: var(--magenta);
+  --color-cyan: var(--cyan);
+  --color-red-ink: var(--red-ink);
+  --color-green-ink: var(--green-ink);
+  --color-yellow-ink: var(--yellow-ink);
+  --color-blue-ink: var(--blue-ink);
+  --color-magenta-ink: var(--magenta-ink);
+  --color-cyan-ink: var(--cyan-ink);
+
+  --shadow-tui: 4px 4px 0 0 var(--shadow-color);
+  --shadow-tui-sm: 2px 2px 0 0 var(--shadow-color);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
+  }
+
+  html {
+    background: var(--background);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "calt" 1, "zero" 1;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* A label that sits on the top border of its positioned parent, like a TUI window title. */
+@utility border-label {
+  position: absolute;
+  top: calc(-0.5lh - 0.5px);
+  left: 1ch;
+  z-index: 1;
+  padding-inline: 1ch;
+  line-height: 1.5;
+  white-space: nowrap;
+  background: inherit;
+}
+
+@utility border-label-bottom {
+  position: absolute;
+  bottom: calc(-0.5lh - 0.5px);
+  right: 1ch;
+  z-index: 1;
+  padding-inline: 1ch;
+  line-height: 1.5;
+  white-space: nowrap;
+  background: inherit;
+}
+
+@utility dither {
+  background-color: var(--overlay);
+  background-image: radial-gradient(color-mix(in oklab, var(--foreground) 35%, transparent) 0.6px, transparent 0.8px);
+  background-size: 3px 3px;
+}
+
+@utility crt {
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      color-mix(in oklab, var(--black) 14%, transparent) 2px,
+      color-mix(in oklab, var(--black) 14%, transparent) 3px
+    );
+  }
+}
